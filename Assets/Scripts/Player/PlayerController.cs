@@ -16,6 +16,8 @@ namespace Plattko
         [SerializeField]private float walkSpeed = 4f;
         [SerializeField]private float idleSlow = 0.9f;
 
+        private bool isFacingRight;
+
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -31,7 +33,9 @@ namespace Plattko
         {
             Move();
 
-            //UpdateAnimationParameters();
+            Flip();
+
+            UpdateAnimationParameters();
         }
 
         // ---------------------------------
@@ -52,17 +56,36 @@ namespace Plattko
         // ---------------------------------
         // SPRITE AND ANIMATIONS
         // ---------------------------------
+        private void Flip()
+        {
+            if (isFacingRight && moveInput.x < 0 || !isFacingRight && moveInput.x > 0)
+            {
+                isFacingRight = !isFacingRight;
+            }
+        }
+
         private void UpdateAnimationParameters()
         {
-            if (moveInput != Vector2.zero)
+            //if (moveInput != Vector2.zero)
+            //{
+            //    animator.SetFloat("Horizontal", moveInput.x);
+            //    //animator.SetFloat("Vertical", moveInput.y);
+            //    animator.SetFloat("Speed", moveInput.sqrMagnitude);
+            //}
+            //else
+            //{
+            //    animator.SetFloat("Speed", 0f);
+            //}
+
+            animator.SetFloat("Velocity", Mathf.Abs(rb.velocity.sqrMagnitude));
+
+            if (isFacingRight)
             {
-                animator.SetFloat("Horizontal", moveInput.x);
-                animator.SetFloat("Vertical", moveInput.y);
-                animator.SetFloat("Speed", moveInput.sqrMagnitude);
+                animator.SetFloat("HorizontalDirection", 1f);
             }
             else
             {
-                animator.SetFloat("Speed", 0f);
+                animator.SetFloat("HorizontalDirection", -1f);
             }
         }
 
