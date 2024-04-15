@@ -16,7 +16,7 @@ namespace Plattko
         [SerializeField]private float walkSpeed = 4f;
         [SerializeField]private float idleSlow = 0.9f;
 
-        private bool isFacingRight;
+        private bool isFacingRight = true;
 
         void Start()
         {
