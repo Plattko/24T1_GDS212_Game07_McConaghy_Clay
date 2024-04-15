@@ -8262,6 +8262,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 13eb105b-4b8c-4141-b54e-48ef3fd6acf0
     m_ActionName: Player/Interact[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1429586045}
+        m_TargetAssemblyTypeName: Plattko.PlayerController, Assembly-CSharp
+        m_MethodName: OnSlowWalk
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: add4448b-a942-4ac5-904d-ce95a5aa5729
+    m_ActionName: Player/SlowWalk[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: K&M
   m_DefaultActionMap: Player
@@ -8280,7 +8296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 6
-  walkSpeed: 4
+  walkSpeed: 3
   idleSlow: 0.9
 --- !u!95 &1429586046
 Animator:

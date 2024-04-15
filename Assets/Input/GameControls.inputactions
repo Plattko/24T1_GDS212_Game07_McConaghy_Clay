@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SlowWalk",
+                    "type": "Button",
+                    "id": "add4448b-a942-4ac5-904d-ce95a5aa5729",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -141,6 +150,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1791c4a0-1e06-442a-bd26-b91206d4d123",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "K&M",
+                    "action": "SlowWalk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "123f1d67-58da-46bb-9984-376ee47813db",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SlowWalk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -17,6 +17,7 @@ namespace Plattko
         [SerializeField]private float idleSlow = 0.9f;
 
         private bool isFacingRight = true;
+        private bool isSlowWalking;
 
         void Start()
         {
@@ -31,7 +32,14 @@ namespace Plattko
 
         private void FixedUpdate()
         {
-            Move();
+            if (isSlowWalking)
+            {
+                Move(walkSpeed);
+            }
+            else
+            {
+                Move(runSpeed);
+            }
 
             Flip();
 
@@ -41,11 +49,11 @@ namespace Plattko
         // ---------------------------------
         // MOVEMENT METHODS
         // ---------------------------------
-        private void Move()
+        private void Move(float moveSpeed)
         {
             if (moveInput != Vector2.zero)
             {
-                rb.velocity = moveInput * runSpeed;
+                rb.velocity = moveInput * moveSpeed;
             }
             else
             {
@@ -79,13 +87,21 @@ namespace Plattko
 
             animator.SetFloat("Velocity", Mathf.Abs(rb.velocity.sqrMagnitude));
 
-            if (isFacingRight)
+            if (isFacingRight && !isSlowWalking)
             {
                 animator.SetFloat("HorizontalDirection", 1f);
             }
-            else
+            else if (!isFacingRight && !isSlowWalking)
             {
                 animator.SetFloat("HorizontalDirection", -1f);
+            }
+            else if (isFacingRight && isSlowWalking)
+            {
+                animator.SetFloat("HorizontalDirection", 0.33f);
+            }
+            else if (!isFacingRight && isSlowWalking)
+            {
+                animator.SetFloat("HorizontalDirection", -0.33f);
             }
         }
 
@@ -110,6 +126,19 @@ namespace Plattko
             if (context.performed)
             {
                 //Functionality
+            }
+        }
+
+        public void OnSlowWalk(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                isSlowWalking = true;
+            }
+
+            if (context.canceled)
+            {
+                isSlowWalking = false;
             }
         }
     }
