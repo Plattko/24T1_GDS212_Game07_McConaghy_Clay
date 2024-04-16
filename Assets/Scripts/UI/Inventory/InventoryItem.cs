@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 namespace Plattko
 {
@@ -10,14 +11,24 @@ namespace Plattko
     {
         [Header("UI")]
         [SerializeField] private Image image;
+        [SerializeField] private TextMeshProUGUI stackCountText;
 
         [HideInInspector] public Transform parentAfterDrag;
         [HideInInspector] public Item item;
+        [HideInInspector] public int stackCount = 1;
 
         public void InitialiseItem(Item newItem)
         {
             item = newItem;
             image.sprite = newItem.image;
+            RefreshCount();
+        }
+
+        public void RefreshCount()
+        {
+            stackCountText.text = stackCount.ToString();
+            bool shouldCountDisplay = stackCount > 1;
+            stackCountText.gameObject.SetActive(shouldCountDisplay);
         }
         
         public void OnBeginDrag(PointerEventData eventData)
