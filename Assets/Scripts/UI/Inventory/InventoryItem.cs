@@ -12,6 +12,13 @@ namespace Plattko
         [SerializeField] private Image image;
 
         [HideInInspector] public Transform parentAfterDrag;
+        [HideInInspector] public Item item;
+
+        public void InitialiseItem(Item newItem)
+        {
+            item = newItem;
+            image.sprite = newItem.image;
+        }
         
         public void OnBeginDrag(PointerEventData eventData)
         {
