@@ -19,7 +19,16 @@ namespace Plattko
 
         public void PickupItem()
         {
-            inventoryManager.AddItem(item);
+            bool wasItemPickedUp = inventoryManager.AddItem(item);
+
+            if (wasItemPickedUp)
+            {
+                Debug.Log("Item added.");
+            }
+            else
+            {
+                Debug.Log("Item not added.");
+            }
         }
     }
 }
