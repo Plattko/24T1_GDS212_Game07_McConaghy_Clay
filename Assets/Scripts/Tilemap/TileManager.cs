@@ -17,7 +17,11 @@ namespace Plattko
         {
             foreach (var position in interactableTilemap.cellBounds.allPositionsWithin)
             {
-                interactableTilemap.SetTile(position, hiddenInteractableTile);
+                TileBase tile = interactableTilemap.GetTile(position);
+                if (tile != null && tile.name == "InteractableVisible")
+                {
+                    interactableTilemap.SetTile(position, hiddenInteractableTile);
+                }
             }
         }
 
