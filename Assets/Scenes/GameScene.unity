@@ -10012,7 +10012,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryManager: {fileID: 785779362}
-  item: {fileID: 11400000, guid: 58309258b4f792d4bb981dc8962b0391, type: 2}
+  items:
+  - {fileID: 11400000, guid: 58309258b4f792d4bb981dc8962b0391, type: 2}
+  - {fileID: 11400000, guid: b14fbcf41f397384b91329eae0ebea1f, type: 2}
 --- !u!114 &848600480 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7928671441712419292, guid: 5a97ca5dcb4929948b98485834dc3a8a, type: 3}

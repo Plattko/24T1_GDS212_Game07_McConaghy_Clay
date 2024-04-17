@@ -7,21 +7,29 @@ namespace Plattko
     public class ItemTest : MonoBehaviour
     {
         public InventoryManager inventoryManager;
-        public Item item;
+        public Item[] items;
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                PickupItem(items[1]);
+            }
             if (Input.GetKeyDown(KeyCode.I))
             {
-                PickupItem();
+                PickupItem(items[0]);
             }
             if (Input.GetKeyDown(KeyCode.O))
             {
                 GetSelectedItem();
             }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                UseSelectedItem();
+            }
         }
 
-        public void PickupItem()
+        public void PickupItem(Item item)
         {
             bool wasItemPickedUp = inventoryManager.AddItem(item);
 
@@ -37,7 +45,7 @@ namespace Plattko
 
         public void GetSelectedItem()
         {
-            Item item = inventoryManager.GetSelectedItem();
+            Item item = inventoryManager.GetSelectedItem(false);
             if (item != null)
             {
                 Debug.Log("Received item: " + item);
@@ -45,6 +53,19 @@ namespace Plattko
             else
             {
                 Debug.Log("No item received.");
+            }
+        }
+
+        public void UseSelectedItem()
+        {
+            Item item = inventoryManager.GetSelectedItem(true);
+            if (item != null)
+            {
+                Debug.Log("Used item: " + item);
+            }
+            else
+            {
+                Debug.Log("No item to use.");
             }
         }
     }

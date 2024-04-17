@@ -23,6 +23,7 @@ namespace Plattko
         {
             Undefined,
             Tool,
+            Consumable,
             PlaceableObject
         }
 
