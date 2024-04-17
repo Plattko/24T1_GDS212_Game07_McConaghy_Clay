@@ -19,6 +19,10 @@ namespace Plattko
         private bool isFacingRight = true;
         private bool isSlowWalking;
 
+        [Header("Tile Interaction")]
+        // TEMPORARY - Tilling testing variables
+        [SerializeField] private TileManager tileManager;
+
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -117,7 +121,18 @@ namespace Plattko
         {
             if (context.performed)
             {
-                //Functionality
+                // TO-DO: Replace with Hoe usage
+
+                Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+                if (tileManager.IsInteractable(position))
+                {
+                    Debug.Log("Tile is interactable.");
+                    tileManager.SetTilled(position);
+                }
+                else
+                {
+                    Debug.Log("Tile is not interactable.");
+                }
             }
         }
 
