@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Use",
+                    "name": "UsePrimary",
                     "type": "Button",
                     "id": "5524acff-ece3-44bb-9f2b-a81257522c7b",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "UseSecondary",
                     "type": "Button",
                     "id": "13eb105b-4b8c-4141-b54e-48ef3fd6acf0",
                     "expectedControlType": "Button",
@@ -215,7 +215,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "K&M",
-                    "action": "Use",
+                    "action": "UsePrimary",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -226,7 +226,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Use",
+                    "action": "UsePrimary",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -237,7 +237,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "K&M",
-                    "action": "Interact",
+                    "action": "UseSecondary",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -248,7 +248,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Interact",
+                    "action": "UseSecondary",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

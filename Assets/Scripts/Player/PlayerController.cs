@@ -7,6 +7,7 @@ namespace Plattko
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] InventoryManager inventoryManager;
         private Rigidbody2D rb;
         private Animator animator;
 
@@ -117,22 +118,34 @@ namespace Plattko
             moveInput = context.ReadValue<Vector2>();
         }
 
-        public void OnUse(InputAction.CallbackContext context)
+        public void OnUsePrimary(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
                 // TO-DO: Replace with Hoe usage
 
-                Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
-                if (tileManager.IsInteractable(position))
-                {
-                    Debug.Log("Tile is interactable.");
-                    tileManager.SetTilled(position);
-                }
-                else
-                {
-                    Debug.Log("Tile is not interactable.");
-                }
+                //Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+                //if (tileManager.IsInteractable(position))
+                //{
+                //    Debug.Log("Tile is interactable.");
+                //    tileManager.SetTilled(position);
+                //}
+                //else
+                //{
+                //    Debug.Log("Tile is not interactable.");
+                //}
+
+                Item item = inventoryManager.GetSelectedItem(false);
+                item.UsePrimary();
+            }
+        }
+
+        public void OnUseSecondary(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                Item item = inventoryManager.GetSelectedItem(false);
+                item.UseSecondary();
             }
         }
 

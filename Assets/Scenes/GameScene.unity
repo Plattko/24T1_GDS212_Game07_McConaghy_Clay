@@ -11756,7 +11756,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1429586045}
         m_TargetAssemblyTypeName: Plattko.PlayerController, Assembly-CSharp
-        m_MethodName: OnUse
+        m_MethodName: OnUsePrimary
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11997,6 +11997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc5f0ea47c2e474c983086d452ebd2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 785779362}
   runSpeed: 6
   walkSpeed: 3
   idleSlow: 0.9
@@ -12080,7 +12081,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 785779362}
   startingItems:
   - {fileID: 11400000, guid: 58309258b4f792d4bb981dc8962b0391, type: 2}
-  - {fileID: 11400000, guid: b505abb16d442bb4e8d74af8eb3106e3, type: 2}
+  - {fileID: 11400000, guid: 6b047be70dd59ae4abf134f8bbc9534d, type: 2}
   starterSeedCount: 15
 --- !u!1001 &1528367642
 PrefabInstance:

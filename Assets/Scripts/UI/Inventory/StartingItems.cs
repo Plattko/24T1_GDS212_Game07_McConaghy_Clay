@@ -27,7 +27,7 @@ namespace Plattko
         {
             foreach (Item item in startingItems)
             {
-                if (item.itemType == Item.ItemType.Seed)
+                if (item.GetSeed())
                 {
                     for (int i = 0; i < starterSeedCount; i++)
                     {
