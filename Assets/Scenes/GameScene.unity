@@ -1175,7 +1175,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -9996,6 +9996,9 @@ MonoBehaviour:
   - {fileID: 1068682215}
   - {fileID: 1609012663}
   inventoryItemPrefab: {fileID: 7354466686829226120, guid: 0670e31bb7d68074cb101badb78b331b, type: 3}
+  maxStackCount: 999
+  slotHighlight: {fileID: 1945919365}
+  maxSlotIndex: 8
 --- !u!114 &785779363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11465,6 +11468,166 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: eb4b1537-d523-414e-87ae-94f09e4f9d00
     m_ActionName: PauseMenu/Resume[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dafe1e9e-074d-40c7-b76f-e92a5ce73c98
+    m_ActionName: Player/Hotbar1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d7fa7c21-3667-476f-9be2-8e286b74eae8
+    m_ActionName: Player/Hotbar2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0840d59d-40c9-4f10-b2f1-19d0e3e38ed7
+    m_ActionName: Player/Hotbar3[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar4
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c97a148b-c7a4-405a-93a8-95496722ff98
+    m_ActionName: Player/Hotbar4[/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar5
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4e363751-ddb1-4e77-a965-58c844e5b4d7
+    m_ActionName: Player/Hotbar5[/Keyboard/5]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar6
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c9d7b400-4261-4ef3-8338-befa2255b1c7
+    m_ActionName: Player/Hotbar6[/Keyboard/6]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar7
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2a556964-1be9-4b14-aac6-7ea4b8d5026f
+    m_ActionName: Player/Hotbar7[/Keyboard/7]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar8
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1cfc8c99-61d7-42b8-8883-6d246d6a21cb
+    m_ActionName: Player/Hotbar8[/Keyboard/8]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbar9
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f07ccbb4-3c46-48ad-8ff6-8cdbd7a8ce34
+    m_ActionName: Player/Hotbar9[/Keyboard/9]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785779362}
+        m_TargetAssemblyTypeName: Plattko.InventoryManager, Assembly-CSharp
+        m_MethodName: OnHotbarScroll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 28fe5608-33fe-4fc7-869b-9d88b1e2c1f2
+    m_ActionName: Player/HotbarScroll[/Mouse/scroll/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: K&M
   m_DefaultActionMap: Player
@@ -12862,6 +13025,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49da72d9ae2999440b6925cfb5643687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1945919364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945919365}
+  - component: {fileID: 1945919368}
+  - component: {fileID: 1945919367}
+  - component: {fileID: 1945919366}
+  m_Layer: 5
+  m_Name: SlotHighlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1945919365
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945919364}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 262648876}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 24, y: 24}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1945919366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945919364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!114 &1945919367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945919364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1813687143, guid: 8fd35a83deb546b44a18bf3ac81d0621, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1945919368
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945919364}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1946351791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15608,7 +15867,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6047425668243169637, guid: 5a97ca5dcb4929948b98485834dc3a8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1945919365}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a97ca5dcb4929948b98485834dc3a8a, type: 3}
 --- !u!1001 &6324255165668196031

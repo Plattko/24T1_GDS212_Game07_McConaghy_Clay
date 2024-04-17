@@ -7,6 +7,12 @@ namespace Plattko
 {
     public class InventorySlot : MonoBehaviour, IDropHandler
     {
+        public void SelectSlot(Transform slotHighlight)
+        {
+            slotHighlight.SetParent(transform);
+            slotHighlight.localPosition = Vector2.zero;
+        }
+        
         public void OnDrop(PointerEventData eventData)
         {
             if (transform.childCount == 0)

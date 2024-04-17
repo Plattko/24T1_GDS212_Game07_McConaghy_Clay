@@ -73,6 +73,96 @@ namespace Plattko
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar1"",
+                    ""type"": ""Button"",
+                    ""id"": ""dafe1e9e-074d-40c7-b76f-e92a5ce73c98"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar2"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7fa7c21-3667-476f-9be2-8e286b74eae8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar3"",
+                    ""type"": ""Button"",
+                    ""id"": ""0840d59d-40c9-4f10-b2f1-19d0e3e38ed7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar4"",
+                    ""type"": ""Button"",
+                    ""id"": ""c97a148b-c7a4-405a-93a8-95496722ff98"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar5"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e363751-ddb1-4e77-a965-58c844e5b4d7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar6"",
+                    ""type"": ""Button"",
+                    ""id"": ""c9d7b400-4261-4ef3-8338-befa2255b1c7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar7"",
+                    ""type"": ""Button"",
+                    ""id"": ""2a556964-1be9-4b14-aac6-7ea4b8d5026f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar8"",
+                    ""type"": ""Button"",
+                    ""id"": ""1cfc8c99-61d7-42b8-8883-6d246d6a21cb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotbar9"",
+                    ""type"": ""Button"",
+                    ""id"": ""f07ccbb4-3c46-48ad-8ff6-8cdbd7a8ce34"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HotbarScroll"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""28fe5608-33fe-4fc7-869b-9d88b1e2c1f2"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -229,6 +319,149 @@ namespace Plattko
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8aa504b4-d853-4d9b-827c-71d97ef434d4"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f4d4e640-e90f-40a0-9c73-607563274c08"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c8b63c0-b45a-41e2-9978-51a5e397278e"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""439241e1-5a15-4085-bb03-60015f3ddd10"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8199ad1a-983d-439a-85fe-bfe39ccb391d"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba2b7338-fc43-49bd-b5ca-6728777840ae"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d95e33e2-8094-4e6f-b221-59f60ff1a883"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08f7669d-2bb8-4833-bfd8-813781e11922"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f929b90c-10bd-4cd6-9f5c-a51c5aa095d0"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""Hotbar9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7bbaa6ed-c290-4cbb-b57b-0b6ca7900d0d"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""HotbarScroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Bumpers"",
+                    ""id"": ""b262c6f1-67b1-4ee0-891c-61dd7758d1ef"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HotbarScroll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""27ec94cd-f9fa-4186-9088-ec5cf1404fa4"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""HotbarScroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""61356ca8-0fae-4e8e-86b8-46b104ebac36"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""HotbarScroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -309,6 +542,16 @@ namespace Plattko
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_SlowWalk = m_Player.FindAction("SlowWalk", throwIfNotFound: true);
             m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+            m_Player_Hotbar1 = m_Player.FindAction("Hotbar1", throwIfNotFound: true);
+            m_Player_Hotbar2 = m_Player.FindAction("Hotbar2", throwIfNotFound: true);
+            m_Player_Hotbar3 = m_Player.FindAction("Hotbar3", throwIfNotFound: true);
+            m_Player_Hotbar4 = m_Player.FindAction("Hotbar4", throwIfNotFound: true);
+            m_Player_Hotbar5 = m_Player.FindAction("Hotbar5", throwIfNotFound: true);
+            m_Player_Hotbar6 = m_Player.FindAction("Hotbar6", throwIfNotFound: true);
+            m_Player_Hotbar7 = m_Player.FindAction("Hotbar7", throwIfNotFound: true);
+            m_Player_Hotbar8 = m_Player.FindAction("Hotbar8", throwIfNotFound: true);
+            m_Player_Hotbar9 = m_Player.FindAction("Hotbar9", throwIfNotFound: true);
+            m_Player_HotbarScroll = m_Player.FindAction("HotbarScroll", throwIfNotFound: true);
             // PauseMenu
             m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
             m_PauseMenu_Resume = m_PauseMenu.FindAction("Resume", throwIfNotFound: true);
@@ -378,6 +621,16 @@ namespace Plattko
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_SlowWalk;
         private readonly InputAction m_Player_Pause;
+        private readonly InputAction m_Player_Hotbar1;
+        private readonly InputAction m_Player_Hotbar2;
+        private readonly InputAction m_Player_Hotbar3;
+        private readonly InputAction m_Player_Hotbar4;
+        private readonly InputAction m_Player_Hotbar5;
+        private readonly InputAction m_Player_Hotbar6;
+        private readonly InputAction m_Player_Hotbar7;
+        private readonly InputAction m_Player_Hotbar8;
+        private readonly InputAction m_Player_Hotbar9;
+        private readonly InputAction m_Player_HotbarScroll;
         public struct PlayerActions
         {
             private @GameControls m_Wrapper;
@@ -387,6 +640,16 @@ namespace Plattko
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputAction @SlowWalk => m_Wrapper.m_Player_SlowWalk;
             public InputAction @Pause => m_Wrapper.m_Player_Pause;
+            public InputAction @Hotbar1 => m_Wrapper.m_Player_Hotbar1;
+            public InputAction @Hotbar2 => m_Wrapper.m_Player_Hotbar2;
+            public InputAction @Hotbar3 => m_Wrapper.m_Player_Hotbar3;
+            public InputAction @Hotbar4 => m_Wrapper.m_Player_Hotbar4;
+            public InputAction @Hotbar5 => m_Wrapper.m_Player_Hotbar5;
+            public InputAction @Hotbar6 => m_Wrapper.m_Player_Hotbar6;
+            public InputAction @Hotbar7 => m_Wrapper.m_Player_Hotbar7;
+            public InputAction @Hotbar8 => m_Wrapper.m_Player_Hotbar8;
+            public InputAction @Hotbar9 => m_Wrapper.m_Player_Hotbar9;
+            public InputAction @HotbarScroll => m_Wrapper.m_Player_HotbarScroll;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -411,6 +674,36 @@ namespace Plattko
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Hotbar1.started += instance.OnHotbar1;
+                @Hotbar1.performed += instance.OnHotbar1;
+                @Hotbar1.canceled += instance.OnHotbar1;
+                @Hotbar2.started += instance.OnHotbar2;
+                @Hotbar2.performed += instance.OnHotbar2;
+                @Hotbar2.canceled += instance.OnHotbar2;
+                @Hotbar3.started += instance.OnHotbar3;
+                @Hotbar3.performed += instance.OnHotbar3;
+                @Hotbar3.canceled += instance.OnHotbar3;
+                @Hotbar4.started += instance.OnHotbar4;
+                @Hotbar4.performed += instance.OnHotbar4;
+                @Hotbar4.canceled += instance.OnHotbar4;
+                @Hotbar5.started += instance.OnHotbar5;
+                @Hotbar5.performed += instance.OnHotbar5;
+                @Hotbar5.canceled += instance.OnHotbar5;
+                @Hotbar6.started += instance.OnHotbar6;
+                @Hotbar6.performed += instance.OnHotbar6;
+                @Hotbar6.canceled += instance.OnHotbar6;
+                @Hotbar7.started += instance.OnHotbar7;
+                @Hotbar7.performed += instance.OnHotbar7;
+                @Hotbar7.canceled += instance.OnHotbar7;
+                @Hotbar8.started += instance.OnHotbar8;
+                @Hotbar8.performed += instance.OnHotbar8;
+                @Hotbar8.canceled += instance.OnHotbar8;
+                @Hotbar9.started += instance.OnHotbar9;
+                @Hotbar9.performed += instance.OnHotbar9;
+                @Hotbar9.canceled += instance.OnHotbar9;
+                @HotbarScroll.started += instance.OnHotbarScroll;
+                @HotbarScroll.performed += instance.OnHotbarScroll;
+                @HotbarScroll.canceled += instance.OnHotbarScroll;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -430,6 +723,36 @@ namespace Plattko
                 @Pause.started -= instance.OnPause;
                 @Pause.performed -= instance.OnPause;
                 @Pause.canceled -= instance.OnPause;
+                @Hotbar1.started -= instance.OnHotbar1;
+                @Hotbar1.performed -= instance.OnHotbar1;
+                @Hotbar1.canceled -= instance.OnHotbar1;
+                @Hotbar2.started -= instance.OnHotbar2;
+                @Hotbar2.performed -= instance.OnHotbar2;
+                @Hotbar2.canceled -= instance.OnHotbar2;
+                @Hotbar3.started -= instance.OnHotbar3;
+                @Hotbar3.performed -= instance.OnHotbar3;
+                @Hotbar3.canceled -= instance.OnHotbar3;
+                @Hotbar4.started -= instance.OnHotbar4;
+                @Hotbar4.performed -= instance.OnHotbar4;
+                @Hotbar4.canceled -= instance.OnHotbar4;
+                @Hotbar5.started -= instance.OnHotbar5;
+                @Hotbar5.performed -= instance.OnHotbar5;
+                @Hotbar5.canceled -= instance.OnHotbar5;
+                @Hotbar6.started -= instance.OnHotbar6;
+                @Hotbar6.performed -= instance.OnHotbar6;
+                @Hotbar6.canceled -= instance.OnHotbar6;
+                @Hotbar7.started -= instance.OnHotbar7;
+                @Hotbar7.performed -= instance.OnHotbar7;
+                @Hotbar7.canceled -= instance.OnHotbar7;
+                @Hotbar8.started -= instance.OnHotbar8;
+                @Hotbar8.performed -= instance.OnHotbar8;
+                @Hotbar8.canceled -= instance.OnHotbar8;
+                @Hotbar9.started -= instance.OnHotbar9;
+                @Hotbar9.performed -= instance.OnHotbar9;
+                @Hotbar9.canceled -= instance.OnHotbar9;
+                @HotbarScroll.started -= instance.OnHotbarScroll;
+                @HotbarScroll.performed -= instance.OnHotbarScroll;
+                @HotbarScroll.canceled -= instance.OnHotbarScroll;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -518,6 +841,16 @@ namespace Plattko
             void OnInteract(InputAction.CallbackContext context);
             void OnSlowWalk(InputAction.CallbackContext context);
             void OnPause(InputAction.CallbackContext context);
+            void OnHotbar1(InputAction.CallbackContext context);
+            void OnHotbar2(InputAction.CallbackContext context);
+            void OnHotbar3(InputAction.CallbackContext context);
+            void OnHotbar4(InputAction.CallbackContext context);
+            void OnHotbar5(InputAction.CallbackContext context);
+            void OnHotbar6(InputAction.CallbackContext context);
+            void OnHotbar7(InputAction.CallbackContext context);
+            void OnHotbar8(InputAction.CallbackContext context);
+            void OnHotbar9(InputAction.CallbackContext context);
+            void OnHotbarScroll(InputAction.CallbackContext context);
         }
         public interface IPauseMenuActions
         {
