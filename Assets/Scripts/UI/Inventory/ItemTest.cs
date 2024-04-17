@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Plattko
 {
-    public class AddItemTest : MonoBehaviour
+    public class ItemTest : MonoBehaviour
     {
         public InventoryManager inventoryManager;
         public Item item;
@@ -14,6 +14,10 @@ namespace Plattko
             if (Input.GetKeyDown(KeyCode.I))
             {
                 PickupItem();
+            }
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                GetSelectedItem();
             }
         }
 
@@ -28,6 +32,19 @@ namespace Plattko
             else
             {
                 Debug.Log("Item not added.");
+            }
+        }
+
+        public void GetSelectedItem()
+        {
+            Item item = inventoryManager.GetSelectedItem();
+            if (item != null)
+            {
+                Debug.Log("Received item: " + item);
+            }
+            else
+            {
+                Debug.Log("No item received.");
             }
         }
     }

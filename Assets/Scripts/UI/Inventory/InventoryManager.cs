@@ -90,6 +90,18 @@ namespace Plattko
             inventoryItem.InitialiseItem(item);
         }
 
+        public Item GetSelectedItem()
+        {
+            InventorySlot slot = inventorySlots[currentSlotIndex];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot != null)
+            {
+                return itemInSlot.item;
+            }
+
+            return null;
+        }
+
         // ---------------------------------
         // INPUT CHECKS
         // ---------------------------------
