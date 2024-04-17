@@ -15,10 +15,16 @@ namespace Plattko
         
         public void OnDrop(PointerEventData eventData)
         {
-            if (transform.childCount == 0)
+            InventoryItem itemInSlot = GetComponentInChildren<InventoryItem>();
+
+            if (itemInSlot == null)
             {
                 InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
                 inventoryItem.parentAfterDrag = transform;
+            }
+            else
+            {
+                Debug.Log("Slot is occupied.");
             }
         }
     }

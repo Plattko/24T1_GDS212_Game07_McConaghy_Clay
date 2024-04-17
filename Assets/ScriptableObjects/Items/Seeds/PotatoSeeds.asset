@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PotatoSeeds
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  itemType: 3
+  itemType: 4
   actionType: 0
   isItemStackable: 1
   image: {fileID: -2014847206, guid: 5448c35353f3e9345be68d1f5e7fa322, type: 3}
