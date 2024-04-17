@@ -23,8 +23,10 @@ namespace Plattko
         {
             Undefined,
             Tool,
-            Consumable,
-            PlaceableObject
+            Material,
+            PlaceableObject,
+            Seed,
+            Food
         }
 
         public enum ActionType
