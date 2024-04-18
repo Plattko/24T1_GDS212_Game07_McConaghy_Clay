@@ -49,40 +49,6 @@ namespace Plattko
                         Debug.Log("Tile is not tillable.");
                     }
 
-                    //if (isTileHighlighted)
-                    //{
-                    //    Vector3Int tilePos = tilemap.WorldToCell(playerController.tileSelector.displayPos);
-                    //    bool isTileTillable = playerController.tileManager.IsInteractable(tilePos);
-
-                    //    if (isTileTillable)
-                    //    {
-                    //        Debug.Log("Tile is tillable.");
-                    //        playerController.tileManager.SetTilled(tilePos);
-                    //    }
-                    //    else
-                    //    {
-                    //        Debug.Log("Tile is not tillable.");
-                    //    }
-                    //}
-                    //else if (!isTileHighlighted)
-                    //{
-                    //    Vector2 pivotWorldPos = playerController.spriteRenderer.transform.position;
-                    //    Vector2 lastMoveDir = playerController.lastMoveDir;
-                    //    Vector3Int playerTilePos = tilemap.WorldToCell(pivotWorldPos);
-                    //    Vector3Int tilePos = new Vector3Int(playerTilePos.x + (int)lastMoveDir.x, playerTilePos.y + (int)lastMoveDir.y, playerTilePos.z);
-
-                    //    bool isTileTillable = playerController.tileManager.IsInteractable(tilePos);
-                    //    if (isTileTillable)
-                    //    {
-                    //        Debug.Log("Tile is tillable.");
-                    //        playerController.tileManager.SetTilled(tilePos);
-                    //    }
-                    //    else
-                    //    {
-                    //        Debug.Log("Tile is not tillable.");
-                    //    }
-                    //}
-
                     break;
 
                 case ToolType.WateringCan:
