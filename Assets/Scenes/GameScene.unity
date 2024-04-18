@@ -56783,6 +56783,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58309258b4f792d4bb981dc8962b0391, type: 2}
   - {fileID: 11400000, guid: 677714ddc59676a4487696688fd73d3d, type: 2}
   - {fileID: 11400000, guid: 6b047be70dd59ae4abf134f8bbc9534d, type: 2}
+  - {fileID: 11400000, guid: 3e6cff318815b344fbbd3564908be0d9, type: 2}
+  - {fileID: 11400000, guid: 276985f086b5b7a4f9c7f4a78cffc786, type: 2}
   starterSeedCount: 15
 --- !u!1001 &1459822537
 PrefabInstance:
