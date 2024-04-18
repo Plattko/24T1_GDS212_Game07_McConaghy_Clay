@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace Plattko
 {
-    public class Crop : MonoBehaviour
+    public class Crop : MonoBehaviour, IInteractable
     {
         private TileManager tileManager;
+        private InventoryManager inventoryManager;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Sprite deadSprite;
 
@@ -20,7 +21,7 @@ namespace Plattko
         private float growthStageTimer = 0f;
         private int growthStageIndex = 0;
 
-        private float timeToDie = 180f;
+        private float timeToDie = 120f;
         private float deathTimer;
 
         private Sprite[] growthProgressSprites;
@@ -39,7 +40,8 @@ namespace Plattko
             }
         }
 
-        public void InitialiseCrop(Item crop, float timeToGrow, Sprite[] progressSprites, Sprite harvestSprite, Vector3Int tilePos, TileManager tileManager)
+        public void InitialiseCrop(Item crop, float timeToGrow, Sprite[] progressSprites, Sprite harvestSprite, 
+            Vector3Int tilePos, TileManager tileManager, InventoryManager inventoryManager)
         {
             cropItem = crop;
             this.timeToGrow = timeToGrow;
@@ -47,6 +49,7 @@ namespace Plattko
             readyToHarvestSprite = harvestSprite;
             this.tilePos = tilePos;
             this.tileManager = tileManager;
+            this.inventoryManager = inventoryManager;
 
             spriteRenderer.sprite = this.growthProgressSprites[0];
             int growthStageCount = progressSprites.Length;
@@ -97,6 +100,30 @@ namespace Plattko
                     isDead = true;
                     spriteRenderer.sprite = deadSprite;
                 }
+            }
+        }
+
+        public void Interact()
+        {
+            HarvestCrop();
+        }
+
+        public void HarvestCrop()
+        {
+            if (isReadyToHarvest)
+            {
+                tileManager.RemoveOccupied(tilePos);
+                inventoryManager.AddItem(cropItem);
+                Destroy(gameObject);
+            }
+            else if (isDead)
+            {
+                tileManager.RemoveOccupied(tilePos);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Crop not ready to be harvested.");
             }
         }
     }

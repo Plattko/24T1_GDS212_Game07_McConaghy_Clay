@@ -36,10 +36,11 @@ namespace Plattko
 
         private void PlantCrop(Vector3Int tilePos, PlayerController playerController)
         {
+            TileManager tileManager = playerController.tileManager;
             Vector2 spawnPos = new Vector2(tilePos.x + spawnOffset.x, tilePos.y + spawnOffset.y);
             playerController.tileManager.SetOccupied(tilePos);
-            Crop crop = Instantiate(playerController.tileManager.cropPrefab, spawnPos, Quaternion.identity).GetComponent<Crop>();
-            crop.InitialiseCrop(cropItem, timeToGrow, growProgressSprites, readyToHarvestSprite, tilePos, playerController.tileManager);
+            Crop crop = Instantiate(tileManager.cropPrefab, spawnPos, Quaternion.identity).GetComponent<Crop>();
+            crop.InitialiseCrop(cropItem, timeToGrow, growProgressSprites, readyToHarvestSprite, tilePos, tileManager, playerController.inventoryManager);
             playerController.inventoryManager.ConsumeItem();
         }
     }
