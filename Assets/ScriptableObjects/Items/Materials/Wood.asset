@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5e3d241f4e3df439a3588218478ba1, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d0c8f3a82e83b40bc605f1e180ffa7, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  itemType: 2
-  actionType: 0
   isItemStackable: 1
   image: {fileID: 21300000, guid: 65ae90eed3803734892495c62832eecc, type: 3}

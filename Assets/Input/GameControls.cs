@@ -39,7 +39,7 @@ namespace Plattko
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Use"",
+                    ""name"": ""UsePrimary"",
                     ""type"": ""Button"",
                     ""id"": ""5524acff-ece3-44bb-9f2b-a81257522c7b"",
                     ""expectedControlType"": ""Button"",
@@ -48,7 +48,7 @@ namespace Plattko
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""UseSecondary"",
                     ""type"": ""Button"",
                     ""id"": ""13eb105b-4b8c-4141-b54e-48ef3fd6acf0"",
                     ""expectedControlType"": ""Button"",
@@ -239,7 +239,7 @@ namespace Plattko
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""K&M"",
-                    ""action"": ""Use"",
+                    ""action"": ""UsePrimary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -250,7 +250,7 @@ namespace Plattko
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Use"",
+                    ""action"": ""UsePrimary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -261,7 +261,7 @@ namespace Plattko
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""K&M"",
-                    ""action"": ""Interact"",
+                    ""action"": ""UseSecondary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -272,7 +272,7 @@ namespace Plattko
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Interact"",
+                    ""action"": ""UseSecondary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -538,8 +538,8 @@ namespace Plattko
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-            m_Player_Use = m_Player.FindAction("Use", throwIfNotFound: true);
-            m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+            m_Player_UsePrimary = m_Player.FindAction("UsePrimary", throwIfNotFound: true);
+            m_Player_UseSecondary = m_Player.FindAction("UseSecondary", throwIfNotFound: true);
             m_Player_SlowWalk = m_Player.FindAction("SlowWalk", throwIfNotFound: true);
             m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
             m_Player_Hotbar1 = m_Player.FindAction("Hotbar1", throwIfNotFound: true);
@@ -617,8 +617,8 @@ namespace Plattko
         private readonly InputActionMap m_Player;
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
         private readonly InputAction m_Player_Move;
-        private readonly InputAction m_Player_Use;
-        private readonly InputAction m_Player_Interact;
+        private readonly InputAction m_Player_UsePrimary;
+        private readonly InputAction m_Player_UseSecondary;
         private readonly InputAction m_Player_SlowWalk;
         private readonly InputAction m_Player_Pause;
         private readonly InputAction m_Player_Hotbar1;
@@ -636,8 +636,8 @@ namespace Plattko
             private @GameControls m_Wrapper;
             public PlayerActions(@GameControls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Player_Move;
-            public InputAction @Use => m_Wrapper.m_Player_Use;
-            public InputAction @Interact => m_Wrapper.m_Player_Interact;
+            public InputAction @UsePrimary => m_Wrapper.m_Player_UsePrimary;
+            public InputAction @UseSecondary => m_Wrapper.m_Player_UseSecondary;
             public InputAction @SlowWalk => m_Wrapper.m_Player_SlowWalk;
             public InputAction @Pause => m_Wrapper.m_Player_Pause;
             public InputAction @Hotbar1 => m_Wrapper.m_Player_Hotbar1;
@@ -662,12 +662,12 @@ namespace Plattko
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Use.started += instance.OnUse;
-                @Use.performed += instance.OnUse;
-                @Use.canceled += instance.OnUse;
-                @Interact.started += instance.OnInteract;
-                @Interact.performed += instance.OnInteract;
-                @Interact.canceled += instance.OnInteract;
+                @UsePrimary.started += instance.OnUsePrimary;
+                @UsePrimary.performed += instance.OnUsePrimary;
+                @UsePrimary.canceled += instance.OnUsePrimary;
+                @UseSecondary.started += instance.OnUseSecondary;
+                @UseSecondary.performed += instance.OnUseSecondary;
+                @UseSecondary.canceled += instance.OnUseSecondary;
                 @SlowWalk.started += instance.OnSlowWalk;
                 @SlowWalk.performed += instance.OnSlowWalk;
                 @SlowWalk.canceled += instance.OnSlowWalk;
@@ -711,12 +711,12 @@ namespace Plattko
                 @Move.started -= instance.OnMove;
                 @Move.performed -= instance.OnMove;
                 @Move.canceled -= instance.OnMove;
-                @Use.started -= instance.OnUse;
-                @Use.performed -= instance.OnUse;
-                @Use.canceled -= instance.OnUse;
-                @Interact.started -= instance.OnInteract;
-                @Interact.performed -= instance.OnInteract;
-                @Interact.canceled -= instance.OnInteract;
+                @UsePrimary.started -= instance.OnUsePrimary;
+                @UsePrimary.performed -= instance.OnUsePrimary;
+                @UsePrimary.canceled -= instance.OnUsePrimary;
+                @UseSecondary.started -= instance.OnUseSecondary;
+                @UseSecondary.performed -= instance.OnUseSecondary;
+                @UseSecondary.canceled -= instance.OnUseSecondary;
                 @SlowWalk.started -= instance.OnSlowWalk;
                 @SlowWalk.performed -= instance.OnSlowWalk;
                 @SlowWalk.canceled -= instance.OnSlowWalk;
@@ -837,8 +837,8 @@ namespace Plattko
         public interface IPlayerActions
         {
             void OnMove(InputAction.CallbackContext context);
-            void OnUse(InputAction.CallbackContext context);
-            void OnInteract(InputAction.CallbackContext context);
+            void OnUsePrimary(InputAction.CallbackContext context);
+            void OnUseSecondary(InputAction.CallbackContext context);
             void OnSlowWalk(InputAction.CallbackContext context);
             void OnPause(InputAction.CallbackContext context);
             void OnHotbar1(InputAction.CallbackContext context);

@@ -7,6 +7,7 @@ namespace Plattko
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] InventoryManager inventoryManager;
         private Rigidbody2D rb;
         private Animator animator;
 
@@ -16,13 +17,20 @@ namespace Plattko
         [SerializeField]private float walkSpeed = 4f;
         [SerializeField]private float idleSlow = 0.9f;
 
+        [HideInInspector] public Vector2 lastMoveDir;
         private bool isFacingRight = true;
         private bool isSlowWalking;
+
+        [Header("Tile Interaction")]
+        public TileSelector tileSelector;
+        public TileManager tileManager;
+        [HideInInspector] public SpriteRenderer spriteRenderer;
 
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
+            spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         }
 
         void Update()
@@ -58,6 +66,18 @@ namespace Plattko
             else
             {
                 rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleSlow);
+            }
+
+            if (Mathf.Abs(moveInput.x) > 0.8f || Mathf.Abs(moveInput.y) > 0.8f)
+            {
+                if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
+                {
+                    lastMoveDir = new Vector2(Mathf.Sign(moveInput.x), 0f);
+                }
+                else
+                {
+                    lastMoveDir = new Vector2(0f, Mathf.Sign(moveInput.y));
+                }
             }
         }
 
@@ -113,11 +133,34 @@ namespace Plattko
             moveInput = context.ReadValue<Vector2>();
         }
 
-        public void OnUse(InputAction.CallbackContext context)
+        public void OnUsePrimary(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                //Functionality
+                // TO-DO: Replace with Hoe usage
+
+                //Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+                //if (tileManager.IsInteractable(position))
+                //{
+                //    Debug.Log("Tile is interactable.");
+                //    tileManager.SetTilled(position);
+                //}
+                //else
+                //{
+                //    Debug.Log("Tile is not interactable.");
+                //}
+
+                Item item = inventoryManager.GetSelectedItem(false);
+                item.UsePrimary(this);
+            }
+        }
+
+        public void OnUseSecondary(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                Item item = inventoryManager.GetSelectedItem(false);
+                item.UseSecondary(this);
             }
         }
 

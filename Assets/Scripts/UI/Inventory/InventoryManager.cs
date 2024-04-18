@@ -97,18 +97,18 @@ namespace Plattko
             if (itemInSlot != null)
             {
                 Item item = itemInSlot.item;
-                if (isItemConsumable)
-                {
-                    itemInSlot.stackCount--;
-                    if (itemInSlot.stackCount <= 0)
-                    {
-                        Destroy(itemInSlot.gameObject);
-                    }
-                    else
-                    {
-                        itemInSlot.RefreshCount();
-                    }
-                }
+                //if (isItemConsumable)
+                //{
+                //    itemInSlot.stackCount--;
+                //    if (itemInSlot.stackCount <= 0)
+                //    {
+                //        Destroy(itemInSlot.gameObject);
+                //    }
+                //    else
+                //    {
+                //        itemInSlot.RefreshCount();
+                //    }
+                //}
                 return item;
             }
 

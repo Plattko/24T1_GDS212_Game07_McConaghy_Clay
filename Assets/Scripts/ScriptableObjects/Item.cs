@@ -5,39 +5,28 @@ using UnityEngine.Tilemaps;
 
 namespace Plattko
 {
-    [CreateAssetMenu(fileName = "NewItem", menuName = "Scriptable Object/Create Item", order = 0)]
     public class Item : ScriptableObject
     {
-        [Header ("Gameplay Only")]
-        public TileBase tile;
-        public ItemType itemType;
-        public ActionType actionType;
-
         [Header("UI Only")]
         public bool isItemStackable = true;
 
         [Header ("UI and Gameplay")]
         public Sprite image;
-
-        public enum ItemType
+        
+        public virtual void UsePrimary(PlayerController playerController)
         {
-            Undefined,
-            Tool,
-            Material,
-            PlaceableObject,
-            Seed,
-            Food
+
         }
 
-        public enum ActionType
+        public virtual void UseSecondary(PlayerController playerController)
         {
-            Undefined,
-            Scythe,
-            Hoe,
-            WateringCan,
-            Pickaxe,
-            Axe,
-            Sword
+
         }
+
+        public virtual ToolClass GetTool() { return null; }
+        public virtual MaterialClass GetMaterial() { return null ; }
+        public virtual PlaceableObjectClass GetPlaceableObject() { return null; }
+        public virtual SeedClass GetSeed() { return null; }
+        public virtual FoodClass GetFood() { return null; }
     }
 }
