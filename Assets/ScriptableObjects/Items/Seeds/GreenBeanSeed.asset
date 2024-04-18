@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItemStackable: 1
   image: {fileID: 1836595669, guid: 5448c35353f3e9345be68d1f5e7fa322, type: 3}
-  cropItem: {fileID: 0}
-  timeToGrow: 20
+  cropItem: {fileID: 11400000, guid: 0914b1736675c6b4bb317497934e7a21, type: 2}
+  timeToGrow: 30
   growProgressSprites:
   - {fileID: -1227515281, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
   - {fileID: 300275757, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
