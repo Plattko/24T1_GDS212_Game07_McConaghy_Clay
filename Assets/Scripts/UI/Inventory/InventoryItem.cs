@@ -27,23 +27,7 @@ namespace Plattko
             item = newItem;
             image.sprite = newItem.image;
             RefreshCount();
-
-            if (item.GetTool())
-            {
-                ToolClass toolItem = (ToolClass)item;
-                if (toolItem.toolType == ToolClass.ToolType.WateringCan)
-                {
-                    currentWater = toolItem.waterCapacity;
-                }
-                else
-                {
-                    waterBar.gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                waterBar.gameObject.SetActive(false);
-            }
+            WateringCanCheck();
         }
 
         public void RefreshCount()
@@ -51,6 +35,18 @@ namespace Plattko
             stackCountText.text = stackCount.ToString();
             bool shouldCountDisplay = stackCount > 1;
             stackCountText.gameObject.SetActive(shouldCountDisplay);
+        }
+
+        private void WateringCanCheck()
+        {
+            if (item.GetTool() && ((ToolClass)item).toolType == ToolClass.ToolType.WateringCan)
+            {
+                currentWater = ((ToolClass)item).waterCapacity;
+            }
+            else
+            {
+                waterBar.gameObject.SetActive(false);
+            }
         }
         
         public void OnBeginDrag(PointerEventData eventData)

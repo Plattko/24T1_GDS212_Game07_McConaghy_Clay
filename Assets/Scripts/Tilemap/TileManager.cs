@@ -12,7 +12,8 @@ namespace Plattko
         public Tilemap groundTilemap;
 
         [Header("Tiles")]
-        [SerializeField] private Tile hiddenInteractableTile;
+        [SerializeField] private Tile hiddenTillableTile;
+        [SerializeField] private Tile hiddenWaterTile;
         [SerializeField] private RuleTile tilledTile;
 
         [Header("Tile Data")]
@@ -29,9 +30,16 @@ namespace Plattko
             foreach (var position in interactableTilemap.cellBounds.allPositionsWithin)
             {
                 TileBase tile = interactableTilemap.GetTile(position);
-                if (tile != null && tile.name == "InteractableVisible")
+                if (tile != null)
                 {
-                    interactableTilemap.SetTile(position, hiddenInteractableTile);
+                    if (tile.name == "TillableVisible")
+                    {
+                        interactableTilemap.SetTile(position, hiddenTillableTile);
+                    }
+                    if (tile.name == "WaterVisible")
+                    {
+                        interactableTilemap.SetTile(position, hiddenWaterTile);
+                    }
                 }
             }
         }
@@ -95,7 +103,7 @@ namespace Plattko
         // ---------------------------------
         public void RemoveTilled(Vector3Int position)
         {
-            interactableTilemap.SetTile(position, hiddenInteractableTile);
+            interactableTilemap.SetTile(position, hiddenTillableTile);
             tilledTiles.Remove(position);
         }
 
@@ -117,7 +125,7 @@ namespace Plattko
             TileBase tile = interactableTilemap.GetTile(position);
             if (tile != null)
             {
-                if (tile.name == "Interactable")
+                if (tile.name == "Tillable")
                 {
                     return true;
                 }
@@ -128,7 +136,7 @@ namespace Plattko
 
         public bool IsTileWater(Vector3Int position)
         {
-            TileBase tile = groundTilemap.GetTile(position);
+            TileBase tile = interactableTilemap.GetTile(position);
             if (tile != null)
             {
                 if (tile.name == "Water")

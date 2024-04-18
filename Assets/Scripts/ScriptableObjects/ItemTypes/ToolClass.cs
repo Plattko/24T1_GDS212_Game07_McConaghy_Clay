@@ -39,26 +39,12 @@ namespace Plattko
 
                 case ToolType.Hoe:
                     Debug.Log("Used hoe.");
-                    Tilemap tilemap = playerController.tileManager.interactableTilemap;
-                    Vector3Int tilePos = playerController.tileSelector.GetTilePos(tilemap, playerController);
-                    bool isTileTillable = playerController.tileManager.IsTileTillable(tilePos);
-
-                    if (isTileTillable)
-                    {
-                        Debug.Log("Tile is tillable.");
-                        playerController.tileManager.SetTilled(tilePos);
-                    }
-                    else
-                    {
-                        Debug.Log("Tile is not tillable.");
-                    }
-
+                    UseHoe(playerController);
                     break;
 
                 case ToolType.WateringCan:
                     Debug.Log("Used watering can.");
                     UseWateringCan(playerController);
-
                     break;
 
                 case ToolType.Pickaxe:
@@ -91,15 +77,38 @@ namespace Plattko
             }
         }
 
+        private void UseHoe(PlayerController playerController)
+        {
+            TileManager tileManager = playerController.tileManager;
+            TileSelector tileSelector = playerController.tileSelector;
+
+            Tilemap tilemap = tileManager.interactableTilemap;
+            Vector3Int tilePos = tileSelector.GetTilePos(tilemap, playerController);
+            bool isTileTillable = tileManager.IsTileTillable(tilePos);
+
+            if (isTileTillable)
+            {
+                Debug.Log("Tile is tillable.");
+                tileManager.SetTilled(tilePos);
+            }
+            else
+            {
+                Debug.Log("Tile is not tillable.");
+            }
+        }
+
         private void UseWateringCan(PlayerController playerController)
         {
             // Refill water or water tile
+            TileManager tileManager = playerController.tileManager;
+            TileSelector tileSelector = playerController.tileSelector;
             InventoryItem item = playerController.inventoryManager.GetSelectedInventoryItem();
             Image waterBarFill = item.waterBarFill;
 
-            Tilemap groundTilemap = playerController.tileManager.groundTilemap;
-            Vector3Int groundTilePos = playerController.tileSelector.GetTilePos(groundTilemap, playerController);
-            bool isTileWater = playerController.tileManager.IsTileWater(groundTilePos);
+            Tilemap tilemap = tileManager.interactableTilemap;
+            Vector3Int tilePos = tileSelector.GetTilePos(tilemap, playerController);
+            bool isTileWater = tileManager.IsTileWater(tilePos);
+            bool isTileTilled = tileManager.IsTileTilled(tilePos);
 
             if (isTileWater)
             {
@@ -109,19 +118,15 @@ namespace Plattko
             }
             else
             {
-                Tilemap interactableTilemap = playerController.tileManager.interactableTilemap;
-                Vector3Int interactableTilePos = playerController.tileSelector.GetTilePos(interactableTilemap, playerController);
-                bool isTileTilled = playerController.tileManager.IsTileTilled(interactableTilePos);
-
                 if (item.currentWater > 0)
                 {
+                    item.currentWater--;
+
                     if (isTileTilled)
                     {
-                        playerController.tileManager.SetWatered(interactableTilePos);
+                        tileManager.SetWatered(tilePos);
                         Debug.Log("Watered soil.");
                     }
-
-                    item.currentWater--;
                     
                     if (item.currentWater <= 0)
                     {
