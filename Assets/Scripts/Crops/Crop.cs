@@ -72,12 +72,14 @@ namespace Plattko
                     canGrow = false;
                     isReadyToHarvest = true;
                     spriteRenderer.sprite = readyToHarvestSprite;
+                    //Debug.Log("Finished Growing");
                 }
 
                 if (growthStageTimer >= growthStageDuration)
                 {
                     growthStageTimer = 0f;
                     growthStageIndex++;
+                    //Debug.Log("Growth stage: " + (growthStageIndex + 1));
                     spriteRenderer.sprite = growthProgressSprites[growthStageIndex];
                     if (growthStageIndex > 0 && growthStageIndex < 2)
                     {
