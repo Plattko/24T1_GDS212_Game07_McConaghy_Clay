@@ -37,7 +37,7 @@ namespace Plattko
                     Debug.Log("Used hoe.");
                     Tilemap tilemap = playerController.tileManager.interactableTilemap;
                     Vector3Int tilePos = playerController.tileSelector.GetTilePos(tilemap, playerController);
-                    bool isTileTillable = playerController.tileManager.IsInteractable(tilePos);
+                    bool isTileTillable = playerController.tileManager.IsTileTillable(tilePos);
 
                     if (isTileTillable)
                     {

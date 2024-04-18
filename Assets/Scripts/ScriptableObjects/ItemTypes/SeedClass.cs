@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Plattko
 {
@@ -12,6 +13,9 @@ namespace Plattko
         public override void UseSecondary(PlayerController playerController)
         {
             Debug.Log("Planted seed.");
+
+            Tilemap tilemap = playerController.tileManager.interactableTilemap;
+            Vector3Int tilePos = playerController.tileSelector.GetTilePos(tilemap, playerController);
         }
     }
 }
