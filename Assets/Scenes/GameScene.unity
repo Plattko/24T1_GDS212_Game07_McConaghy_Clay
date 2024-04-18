@@ -4937,7 +4937,7 @@ MonoBehaviour:
   hiddenWaterTile: {fileID: 11400000, guid: c0193c5efee5a934abc61ec3b9adbde2, type: 2}
   tilledTile: {fileID: 11400000, guid: 24df2d302ae018942ab8b0b7500783c7, type: 2}
   wateredTile: {fileID: 11400000, guid: ae14ae6fa6943d94da23b4ded2e5abed, type: 2}
-  wateredTileDuration: 60
+  wateredTileDuration: 40
   cropPrefab: {fileID: 2387287831670960067, guid: 5a8991bc40552fd4a8efb50da5564678, type: 3}
 --- !u!1001 &718902881
 PrefabInstance:
@@ -14158,7 +14158,19 @@ MonoBehaviour:
     m_ActionId: 5524acff-ece3-44bb-9f2b-a81257522c7b
     m_ActionName: Player/Use[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1429586045}
+        m_TargetAssemblyTypeName: Plattko.PlayerController, Assembly-CSharp
+        m_MethodName: OnUseSecondary
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 13eb105b-4b8c-4141-b54e-48ef3fd6acf0
     m_ActionName: Player/Interact[/Mouse/rightButton]
   - m_PersistentCalls:
@@ -14393,7 +14405,9 @@ MonoBehaviour:
   lastMoveDir: {x: 0, y: 0}
   tileSelector: {fileID: 1369406878}
   tileManager: {fileID: 715899600}
+  tileSelectBoxLayer: 6
   spriteRenderer: {fileID: 0}
+  interactDistance: 2
 --- !u!95 &1429586046
 Animator:
   serializedVersion: 5

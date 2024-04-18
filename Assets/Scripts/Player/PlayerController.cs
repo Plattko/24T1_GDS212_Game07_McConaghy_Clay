@@ -24,7 +24,10 @@ namespace Plattko
         [Header("Tile Interaction")]
         public TileSelector tileSelector;
         public TileManager tileManager;
+        [SerializeField] private int tileSelectBoxLayer;
         [HideInInspector] public SpriteRenderer spriteRenderer;
+
+        public float interactDistance = 3f;
 
         void Start()
         {
@@ -146,6 +149,42 @@ namespace Plattko
         {
             if (context.performed)
             {
+                Vector3 mouseWorldPos;
+                mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorldPos.z = 0f;
+
+                if ((mouseWorldPos - transform.position).sqrMagnitude < interactDistance)
+                {
+                    LayerMask layerMask = ~(1 << tileSelectBoxLayer);
+                    RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layerMask);
+
+                    if (hit.collider != null)
+                    {
+                        Debug.Log("Collider: " + hit.collider);
+                        
+                        IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+
+                        if (interactable != null)
+                        {
+                            interactable.Interact();
+                            return;
+                        }
+                        else
+                        {
+                            Debug.Log("No interactable.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("No collision detected");
+                    }
+                }
+                else
+                {
+                    Debug.Log("Distance: " + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).magnitude);
+                    Debug.Log("Mouse out of range for interaction.");
+                }
+
                 Item item = inventoryManager.GetSelectedItem();
                 item.UseSecondary(this);
             }

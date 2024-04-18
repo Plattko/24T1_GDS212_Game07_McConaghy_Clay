@@ -15,7 +15,7 @@ MonoBehaviour:
   isItemStackable: 1
   image: {fileID: -2014847206, guid: 5448c35353f3e9345be68d1f5e7fa322, type: 3}
   cropItem: {fileID: 11400000, guid: d350711cdd4a3ee46b884019a13dbb3a, type: 2}
-  timeToGrow: 120
+  timeToGrow: 60
   growProgressSprites:
   - {fileID: 659551459, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
   - {fileID: -203810072, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
