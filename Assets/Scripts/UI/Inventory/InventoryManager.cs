@@ -41,7 +41,7 @@ namespace Plattko
 
         private void ScrollSlot(int direction)
         {
-            currentSlotIndex += direction;
+            currentSlotIndex -= direction;
             
             if (currentSlotIndex > maxSlotIndex)
             {
