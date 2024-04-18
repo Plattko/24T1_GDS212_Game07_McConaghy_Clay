@@ -7,7 +7,7 @@ namespace Plattko
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] InventoryManager inventoryManager;
+        public InventoryManager inventoryManager;
         private Rigidbody2D rb;
         private Animator animator;
 

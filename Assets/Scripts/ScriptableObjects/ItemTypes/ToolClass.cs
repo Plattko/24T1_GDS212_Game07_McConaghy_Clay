@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 namespace Plattko
 {
@@ -22,6 +23,9 @@ namespace Plattko
             Axe,
             Sword
         }
+
+        [Header("Watering Can Only")]
+        public int waterCapacity = 25;
 
         public override void UsePrimary(PlayerController playerController)
         {
@@ -53,6 +57,8 @@ namespace Plattko
 
                 case ToolType.WateringCan:
                     Debug.Log("Used watering can.");
+                    UseWateringCan(playerController);
+
                     break;
 
                 case ToolType.Pickaxe:
@@ -83,6 +89,56 @@ namespace Plattko
                 default:
                     break;
             }
+        }
+
+        private void UseWateringCan(PlayerController playerController)
+        {
+            // Refill water or water tile
+            InventoryItem item = playerController.inventoryManager.GetSelectedInventoryItem();
+            Image waterBarFill = item.waterBarFill;
+
+            Tilemap groundTilemap = playerController.tileManager.groundTilemap;
+            Vector3Int groundTilePos = playerController.tileSelector.GetTilePos(groundTilemap, playerController);
+            bool isTileWater = playerController.tileManager.IsTileWater(groundTilePos);
+
+            if (isTileWater)
+            {
+                item.currentWater = waterCapacity;
+                waterBarFill.fillAmount = 1;
+                Debug.Log("Refilled water.");
+            }
+            else
+            {
+                Tilemap interactableTilemap = playerController.tileManager.interactableTilemap;
+                Vector3Int interactableTilePos = playerController.tileSelector.GetTilePos(interactableTilemap, playerController);
+                bool isTileTilled = playerController.tileManager.IsTileTilled(interactableTilePos);
+
+                if (item.currentWater > 0)
+                {
+                    if (isTileTilled)
+                    {
+                        playerController.tileManager.SetWatered(interactableTilePos);
+                        Debug.Log("Watered soil.");
+                    }
+
+                    item.currentWater--;
+                    
+                    if (item.currentWater <= 0)
+                    {
+                        waterBarFill.fillAmount = 0;
+                    }
+                    else
+                    {
+                        float fillAmount = (float)item.currentWater / waterCapacity;
+                        waterBarFill.fillAmount = fillAmount;
+                    }
+                }
+                else
+                {
+                    Debug.Log("No water.");
+                }
+            }
+            Debug.Log("Current water: " + item.currentWater + "/" + waterCapacity);
         }
     }
 }

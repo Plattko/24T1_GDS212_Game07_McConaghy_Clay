@@ -2671,6 +2671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableTilemap: {fileID: 110846561}
+  groundTilemap: {fileID: 765455536}
   hiddenInteractableTile: {fileID: 11400000, guid: 07d69e357de32a442a53fa111266752a, type: 2}
   tilledTile: {fileID: 11400000, guid: 24df2d302ae018942ab8b0b7500783c7, type: 2}
   wateredTileDuration: 60

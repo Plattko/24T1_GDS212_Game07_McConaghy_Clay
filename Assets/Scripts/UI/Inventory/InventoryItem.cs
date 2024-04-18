@@ -13,6 +13,11 @@ namespace Plattko
         [SerializeField] private Image image;
         [SerializeField] private TextMeshProUGUI stackCountText;
 
+        [Header("Watering Can Only")]
+        public GameObject waterBar;
+        [HideInInspector] public Image waterBarFill;
+        [HideInInspector] public int currentWater;
+
         [HideInInspector] public Transform parentAfterDrag;
         [HideInInspector] public Item item;
         [HideInInspector] public int stackCount = 1;
@@ -22,6 +27,23 @@ namespace Plattko
             item = newItem;
             image.sprite = newItem.image;
             RefreshCount();
+
+            if (item.GetTool())
+            {
+                ToolClass toolItem = (ToolClass)item;
+                if (toolItem.toolType == ToolClass.ToolType.WateringCan)
+                {
+                    currentWater = toolItem.waterCapacity;
+                }
+                else
+                {
+                    waterBar.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                waterBar.gameObject.SetActive(false);
+            }
         }
 
         public void RefreshCount()

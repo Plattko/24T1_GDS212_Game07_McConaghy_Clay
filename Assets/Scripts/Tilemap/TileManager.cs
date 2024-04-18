@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,6 +9,7 @@ namespace Plattko
     public class TileManager : MonoBehaviour
     {
         public Tilemap interactableTilemap;
+        public Tilemap groundTilemap;
 
         [Header("Tiles")]
         [SerializeField] private Tile hiddenInteractableTile;
@@ -45,12 +47,12 @@ namespace Plattko
         private void UpdateWateredTileTimers()
         {
             List<Vector3Int> positionsToRemove = new List<Vector3Int>();
-            foreach (KeyValuePair<Vector3Int, float> kvp in wateredTileTimers)
+            foreach (Vector3Int key in wateredTileTimers.Keys.ToList())
             {
-                wateredTileTimers[kvp.Key] -= Time.deltaTime;
-                if (wateredTileTimers[kvp.Key] <= 0f)
+                wateredTileTimers[key] -= Time.deltaTime;
+                if (wateredTileTimers[key] <= 0f)
                 {
-                    positionsToRemove.Add(kvp.Key);
+                    positionsToRemove.Add(key);
                 }
             }
             foreach (Vector3Int position in positionsToRemove)
@@ -116,6 +118,20 @@ namespace Plattko
             if (tile != null)
             {
                 if (tile.name == "Interactable")
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool IsTileWater(Vector3Int position)
+        {
+            TileBase tile = groundTilemap.GetTile(position);
+            if (tile != null)
+            {
+                if (tile.name == "Water")
                 {
                     return true;
                 }

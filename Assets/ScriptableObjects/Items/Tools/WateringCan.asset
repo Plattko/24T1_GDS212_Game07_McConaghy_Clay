@@ -15,3 +15,4 @@ MonoBehaviour:
   isItemStackable: 0
   image: {fileID: 21300000, guid: b802db1bba2d5304b9592d97eff9141f, type: 3}
   toolType: 3
+  waterCapacity: 25
