@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Plattko
 {
@@ -22,9 +23,9 @@ namespace Plattko
             Sword
         }
 
-        public override void UsePrimary()
+        public override void UsePrimary(PlayerController playerController)
         {
-            base.UsePrimary();
+            base.UsePrimary(playerController);
 
             switch (toolType)
             {
@@ -34,6 +35,54 @@ namespace Plattko
 
                 case ToolType.Hoe:
                     Debug.Log("Used hoe.");
+                    Tilemap tilemap = playerController.tileManager.interactableTilemap;
+                    Vector3Int tilePos = playerController.tileSelector.GetTilePos(tilemap, playerController);
+                    bool isTileTillable = playerController.tileManager.IsInteractable(tilePos);
+
+                    if (isTileTillable)
+                    {
+                        Debug.Log("Tile is tillable.");
+                        playerController.tileManager.SetTilled(tilePos);
+                    }
+                    else
+                    {
+                        Debug.Log("Tile is not tillable.");
+                    }
+
+                    //if (isTileHighlighted)
+                    //{
+                    //    Vector3Int tilePos = tilemap.WorldToCell(playerController.tileSelector.displayPos);
+                    //    bool isTileTillable = playerController.tileManager.IsInteractable(tilePos);
+
+                    //    if (isTileTillable)
+                    //    {
+                    //        Debug.Log("Tile is tillable.");
+                    //        playerController.tileManager.SetTilled(tilePos);
+                    //    }
+                    //    else
+                    //    {
+                    //        Debug.Log("Tile is not tillable.");
+                    //    }
+                    //}
+                    //else if (!isTileHighlighted)
+                    //{
+                    //    Vector2 pivotWorldPos = playerController.spriteRenderer.transform.position;
+                    //    Vector2 lastMoveDir = playerController.lastMoveDir;
+                    //    Vector3Int playerTilePos = tilemap.WorldToCell(pivotWorldPos);
+                    //    Vector3Int tilePos = new Vector3Int(playerTilePos.x + (int)lastMoveDir.x, playerTilePos.y + (int)lastMoveDir.y, playerTilePos.z);
+
+                    //    bool isTileTillable = playerController.tileManager.IsInteractable(tilePos);
+                    //    if (isTileTillable)
+                    //    {
+                    //        Debug.Log("Tile is tillable.");
+                    //        playerController.tileManager.SetTilled(tilePos);
+                    //    }
+                    //    else
+                    //    {
+                    //        Debug.Log("Tile is not tillable.");
+                    //    }
+                    //}
+
                     break;
 
                 case ToolType.WateringCan:
@@ -57,7 +106,7 @@ namespace Plattko
             }
         }
 
-        public override void UseSecondary()
+        public override void UseSecondary(PlayerController playerController)
         {
             switch (toolType)
             {

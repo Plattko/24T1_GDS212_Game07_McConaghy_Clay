@@ -7,7 +7,7 @@ namespace Plattko
 {
     public class TileManager : MonoBehaviour
     {
-        [SerializeField] private Tilemap interactableTilemap;
+        public Tilemap interactableTilemap;
 
         [Header("Tiles")]
         [SerializeField] private Tile hiddenInteractableTile;

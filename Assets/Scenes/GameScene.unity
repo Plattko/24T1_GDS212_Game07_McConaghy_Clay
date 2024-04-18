@@ -11528,6 +11528,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1429586041}
   offset: 0.5
+  isTileHighlighted: 0
+  displayPos: {x: 0, y: 0}
 --- !u!212 &1369406879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12001,7 +12003,10 @@ MonoBehaviour:
   runSpeed: 6
   walkSpeed: 3
   idleSlow: 0.9
+  isFacingRight: 1
+  tileSelector: {fileID: 1369406878}
   tileManager: {fileID: 715899600}
+  spriteRenderer: {fileID: 0}
 --- !u!95 &1429586046
 Animator:
   serializedVersion: 5

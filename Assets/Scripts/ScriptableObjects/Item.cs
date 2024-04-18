@@ -13,12 +13,12 @@ namespace Plattko
         [Header ("UI and Gameplay")]
         public Sprite image;
         
-        public virtual void UsePrimary()
+        public virtual void UsePrimary(PlayerController playerController)
         {
 
         }
 
-        public virtual void UseSecondary()
+        public virtual void UseSecondary(PlayerController playerController)
         {
 
         }

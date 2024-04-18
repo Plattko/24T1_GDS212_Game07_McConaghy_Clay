@@ -9,7 +9,7 @@ namespace Plattko
     {
         public override PlaceableObjectClass GetPlaceableObject() { return this; }
 
-        public override void UseSecondary()
+        public override void UseSecondary(PlayerController playerController)
         {
             Debug.Log("Placed object.");
         }

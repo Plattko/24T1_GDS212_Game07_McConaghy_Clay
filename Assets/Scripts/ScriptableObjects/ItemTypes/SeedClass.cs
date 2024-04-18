@@ -9,7 +9,7 @@ namespace Plattko
     {
         public override SeedClass GetSeed() { return this; }
 
-        public override void UseSecondary()
+        public override void UseSecondary(PlayerController playerController)
         {
             Debug.Log("Planted seed.");
         }

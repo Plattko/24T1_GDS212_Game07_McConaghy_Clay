@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Plattko
 {
     public class TileSelector : MonoBehaviour
     {
-        [SerializeField] private Transform playerTransform;
+        [SerializeField] private TileManager tileManager;
         private SpriteRenderer spriteRenderer;
         private Vector3 mouseWorldPos;
 
@@ -16,6 +17,9 @@ namespace Plattko
 
         private int tileSelectBoxLayer = 6;
         private LayerMask layerMask;
+
+        public bool isTileHighlighted = false;
+        public Vector2 displayPos;
 
         void Start()
         {
@@ -43,15 +47,44 @@ namespace Plattko
 
             if (spriteRenderer.enabled)
             {
+                isTileHighlighted = true;
                 HighlightTile();
+            }
+            else
+            {
+                isTileHighlighted = false;
             }
         }
 
         private void HighlightTile()
         {
             Vector2 gridPos = new Vector2(Mathf.FloorToInt(mouseWorldPos.x), Mathf.FloorToInt(mouseWorldPos.y));
-            Vector2 displayPos = gridPos + offsetVector;
+            displayPos = gridPos + offsetVector;
             transform.position = displayPos;
+        }
+
+        public Vector3Int GetTilePos(Tilemap tilemap, PlayerController playerController)
+        {
+            Vector3Int tilePos = Vector3Int.zero;
+            
+            if (isTileHighlighted)
+            {
+                tilePos = tilemap.WorldToCell(displayPos);
+            }
+            else if (!isTileHighlighted)
+            {
+                Vector2 pivotWorldPos = playerController.spriteRenderer.transform.position;
+                Vector2 lastMoveDir = playerController.lastMoveDir;
+                Vector3Int playerTilePos = tilemap.WorldToCell(pivotWorldPos);
+                tilePos = new Vector3Int(playerTilePos.x + (int)lastMoveDir.x, playerTilePos.y + (int)lastMoveDir.y, playerTilePos.z);
+            }
+            
+            if (tilePos == Vector3Int.zero)
+            {
+                Debug.LogWarning("Tile Position == Vector3Int.zero.");
+            }
+
+            return tilePos;
         }
     }
 }
