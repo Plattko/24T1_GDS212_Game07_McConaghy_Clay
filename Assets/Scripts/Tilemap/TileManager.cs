@@ -19,6 +19,9 @@ namespace Plattko
         private List<Vector3Int> occupiedTiles = new List<Vector3Int>();
         private Dictionary<Vector3Int, float> wateredTileTimers = new Dictionary<Vector3Int, float>();
 
+        [Header("Crop Prefab")]
+        public GameObject cropPrefab;
+
         private void Start()
         {
             foreach (var position in interactableTilemap.cellBounds.allPositionsWithin)
