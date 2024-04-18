@@ -10,11 +10,13 @@ namespace Plattko
     {
         public Tilemap interactableTilemap;
         public Tilemap groundTilemap;
+        [SerializeField] private Tilemap wateredTilemap;
 
         [Header("Tiles")]
         [SerializeField] private Tile hiddenTillableTile;
         [SerializeField] private Tile hiddenWaterTile;
         [SerializeField] private RuleTile tilledTile;
+        [SerializeField] private RuleTile wateredTile;
 
         [Header("Tile Data")]
         [SerializeField] private float wateredTileDuration = 60f;
@@ -90,6 +92,7 @@ namespace Plattko
         {
             if (!wateredTileTimers.ContainsKey(position))
             {
+                wateredTilemap.SetTile(position, wateredTile);
                 wateredTileTimers.Add(position, wateredTileDuration);
             }
             else
@@ -114,6 +117,7 @@ namespace Plattko
 
         public void RemoveWatered(Vector3Int position)
         {
+            wateredTilemap.SetTile(position, null);
             wateredTileTimers.Remove(position);
         }
 

@@ -4932,9 +4932,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTilemap: {fileID: 110846561}
   groundTilemap: {fileID: 765455536}
+  wateredTilemap: {fileID: 594417147}
   hiddenTillableTile: {fileID: 11400000, guid: 07d69e357de32a442a53fa111266752a, type: 2}
   hiddenWaterTile: {fileID: 11400000, guid: c0193c5efee5a934abc61ec3b9adbde2, type: 2}
   tilledTile: {fileID: 11400000, guid: 24df2d302ae018942ab8b0b7500783c7, type: 2}
+  wateredTile: {fileID: 11400000, guid: ae14ae6fa6943d94da23b4ded2e5abed, type: 2}
   wateredTileDuration: 60
   cropPrefab: {fileID: 2387287831670960067, guid: 5a8991bc40552fd4a8efb50da5564678, type: 3}
 --- !u!1001 &718902881
