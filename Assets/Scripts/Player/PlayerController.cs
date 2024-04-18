@@ -137,20 +137,7 @@ namespace Plattko
         {
             if (context.performed)
             {
-                // TO-DO: Replace with Hoe usage
-
-                //Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
-                //if (tileManager.IsInteractable(position))
-                //{
-                //    Debug.Log("Tile is interactable.");
-                //    tileManager.SetTilled(position);
-                //}
-                //else
-                //{
-                //    Debug.Log("Tile is not interactable.");
-                //}
-
-                Item item = inventoryManager.GetSelectedItem(false);
+                Item item = inventoryManager.GetSelectedItem();
                 item.UsePrimary(this);
             }
         }
@@ -159,7 +146,7 @@ namespace Plattko
         {
             if (context.performed)
             {
-                Item item = inventoryManager.GetSelectedItem(false);
+                Item item = inventoryManager.GetSelectedItem();
                 item.UseSecondary(this);
             }
         }

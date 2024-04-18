@@ -45,7 +45,7 @@ namespace Plattko
 
         public void GetSelectedItem()
         {
-            Item item = inventoryManager.GetSelectedItem(false);
+            Item item = inventoryManager.GetSelectedItem();
             if (item != null)
             {
                 Debug.Log("Received item: " + item);
@@ -56,9 +56,9 @@ namespace Plattko
             }
         }
 
-        public void UseSelectedItem()
+        public void UseSelectedItem() // Does not currently work
         {
-            Item item = inventoryManager.GetSelectedItem(true);
+            Item item = inventoryManager.GetSelectedItem();
             if (item != null)
             {
                 Debug.Log("Used item: " + item);

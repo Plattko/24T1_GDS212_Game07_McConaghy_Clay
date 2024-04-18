@@ -40,6 +40,7 @@ namespace Plattko
             playerController.tileManager.SetOccupied(tilePos);
             Crop crop = Instantiate(playerController.tileManager.cropPrefab, spawnPos, Quaternion.identity).GetComponent<Crop>();
             crop.InitialiseCrop(cropItem, timeToGrow, growProgressSprites, readyToHarvestSprite, tilePos, playerController.tileManager);
+            playerController.inventoryManager.ConsumeItem();
         }
     }
 }
