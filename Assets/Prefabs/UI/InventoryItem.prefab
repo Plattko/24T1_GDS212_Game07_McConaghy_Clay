@@ -168,8 +168,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -378,8 +378,8 @@ MonoBehaviour:
   image: {fileID: 6240599848947188974}
   stackCountText: {fileID: 6142561041703717357}
   waterBar: {fileID: 90464595371234928}
-  waterBarBorder: {fileID: 2092635671883253339}
   waterBarFill: {fileID: 6972790096155283546}
+  currentWater: 0
   parentAfterDrag: {fileID: 0}
   item: {fileID: 0}
   stackCount: 1
