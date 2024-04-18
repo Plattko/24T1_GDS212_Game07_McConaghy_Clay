@@ -90,26 +90,42 @@ namespace Plattko
             inventoryItem.InitialiseItem(item);
         }
 
-        public Item GetSelectedItem(bool isItemConsumable)
+        public Item GetSelectedItem()
         {
             InventorySlot slot = inventorySlots[currentSlotIndex];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null)
             {
                 Item item = itemInSlot.item;
-                //if (isItemConsumable)
-                //{
-                //    itemInSlot.stackCount--;
-                //    if (itemInSlot.stackCount <= 0)
-                //    {
-                //        Destroy(itemInSlot.gameObject);
-                //    }
-                //    else
-                //    {
-                //        itemInSlot.RefreshCount();
-                //    }
-                //}
                 return item;
+            }
+
+            return null;
+        }
+
+        public void ConsumeItem()
+        {
+            InventorySlot slot = inventorySlots[currentSlotIndex];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            itemInSlot.stackCount--;
+            if (itemInSlot.stackCount <= 0)
+            {
+                Destroy(itemInSlot.gameObject);
+            }
+            else
+            {
+                itemInSlot.RefreshCount();
+            }
+        }
+
+        public InventoryItem GetSelectedInventoryItem()
+        {
+            InventorySlot slot = inventorySlots[currentSlotIndex];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            
+            if (itemInSlot != null)
+            {
+                return itemInSlot;
             }
 
             return null;

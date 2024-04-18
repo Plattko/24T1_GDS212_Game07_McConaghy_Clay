@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3f40093572cc041938d742a7e0d0ea, type: 3}
   m_Name: PotatoSeed
   m_EditorClassIdentifier: 
-  tile: {fileID: 0}
   isItemStackable: 1
   image: {fileID: -2014847206, guid: 5448c35353f3e9345be68d1f5e7fa322, type: 3}
+  cropItem: {fileID: 11400000, guid: d350711cdd4a3ee46b884019a13dbb3a, type: 2}
+  timeToGrow: 120
+  growProgressSprites:
+  - {fileID: 659551459, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
+  - {fileID: -203810072, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
+  - {fileID: -471629282, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
+  - {fileID: 1803739154, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
+  readyToHarvestSprite: {fileID: 1457231022, guid: 086cdc8c6da58fd408f6546f5d459625, type: 3}
+  spawnOffset: {x: 0.5, y: 0.125}
