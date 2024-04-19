@@ -7,7 +7,6 @@ namespace Plattko
 {
     public class TileSelector : MonoBehaviour
     {
-        [SerializeField] private TileManager tileManager;
         private SpriteRenderer spriteRenderer;
         private Vector3 mouseWorldPos;
 
