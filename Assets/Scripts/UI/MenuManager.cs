@@ -17,11 +17,6 @@ namespace Plattko
         [SerializeField] private float hotbarGameplayY = 59f;
         [SerializeField] private float hotbarInventoryY = 615f;
 
-        private void Update()
-        {
-            Debug.Log("Hotbar anchored position: " + hotbarUI.GetComponent<RectTransform>().anchoredPosition);
-        }
-
         public void OnPause(InputAction.CallbackContext context)
         {
             if (context.performed)
