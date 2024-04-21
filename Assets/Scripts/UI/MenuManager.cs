@@ -14,8 +14,13 @@ namespace Plattko
         [SerializeField] private GameObject slotHiglight;
 
         [Header("Hotbar Positions")]
-        [SerializeField] private Vector2 hotbarGameplayPosition = new Vector2(960f, 59f);
-        [SerializeField] private Vector2 hotbarInventoryPosition = new Vector2(960f, 615f);
+        [SerializeField] private float hotbarGameplayY = 59f;
+        [SerializeField] private float hotbarInventoryY = 615f;
+
+        private void Update()
+        {
+            Debug.Log("Hotbar anchored position: " + hotbarUI.GetComponent<RectTransform>().anchoredPosition);
+        }
 
         public void OnPause(InputAction.CallbackContext context)
         {
@@ -37,7 +42,8 @@ namespace Plattko
         {
             slotHiglight.SetActive(false);
             hotbarUI.GetComponent<Image>().enabled = false;
-            hotbarUI.transform.position = hotbarInventoryPosition;
+            Vector2 anchoredPos = hotbarUI.GetComponent<RectTransform>().anchoredPosition;
+            hotbarUI.GetComponent<RectTransform>().anchoredPosition = new Vector2(anchoredPos.x, hotbarInventoryY);
             pauseMenuUI.SetActive(true);
             playerInput.SwitchCurrentActionMap("PauseMenu");
             // Stop time
@@ -47,7 +53,8 @@ namespace Plattko
         {
             slotHiglight.SetActive(true);
             hotbarUI.GetComponent<Image>().enabled = true;
-            hotbarUI.transform.position = hotbarGameplayPosition;
+            Vector2 anchoredPos = hotbarUI.GetComponent<RectTransform>().anchoredPosition;
+            hotbarUI.GetComponent<RectTransform>().anchoredPosition = new Vector2(anchoredPos.x, hotbarGameplayY);
             pauseMenuUI.SetActive(false);
             playerInput.SwitchCurrentActionMap("Player");
             // Resume time
